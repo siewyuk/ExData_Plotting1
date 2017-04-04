@@ -4,7 +4,7 @@
 #Loading will take some time for all 2,075,259 rows of data.
 dat <- read.table("household_power_consumption.txt", 
                   sep = ";", 
-                  header = T, 
+                  header = TRUE, 
                   na.strings = "?", 
                   stringsAsFactor = FALSE, 
                   colClasses = c("character",
