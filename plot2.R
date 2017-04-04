@@ -24,3 +24,11 @@ data <- dat[dat$Date %in% c("1/2/2007","2/2/2007") ,]
 data$Date <- as.Date(data$Date, format = "%d/ %m/ %Y")
 datetime <- paste(as.Date(data$Date), data$Time)
 data$datetime <- as.POSIXct(datetime)
+
+#Create plot: x-axis = datetime & y-axis = Global_active_power
+plot(data$datetime, data$Global_active_power, type = "l", 
+     xlab = "", ylab = "Global Active Power (kilowatts)")
+
+#Save to plot according to specified width and height
+dev.copy(png, file = "plot2.png", width = 480, height = 480)
+dev.off()
