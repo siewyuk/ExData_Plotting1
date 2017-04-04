@@ -25,3 +25,15 @@ data$Date <- as.Date(data$Date, format = "%d/ %m/ %Y")
 datetime <- paste(as.Date(data$Date), data$Time)
 data$datetime <- as.POSIXct(datetime)
 
+#Subset data as only using data from the dates 2007-02-01 and 2007-02-02.
+data <- dat[dat$Date %in% c("1/2/2007","2/2/2007") ,]
+
+#Format date, paste with time and perform POSIXct date-time conversion
+data$Date <- as.Date(data$Date, format = "%d/ %m/ %Y")
+datetime <- paste(as.Date(data$Date), data$Time)
+data$datetime <- as.POSIXct(datetime)
+
+#Create partition for 2x2 plots
+par(mfrow = c(2,2), mar = c(4,4,2,1), oma = c(0,0,2,0))
+
+
