@@ -25,5 +25,5 @@ hist(data$Global_active_power, col = "red", main = "Global Active Power",
 
 #Save to histogram according to specified width and height
 dev.copy(png, file = "plot1.png", width = 480, height = 480)
-
+dev.off()
 
